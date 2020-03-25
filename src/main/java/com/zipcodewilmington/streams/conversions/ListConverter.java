@@ -29,11 +29,15 @@ public final class ListConverter extends PersonConversionAgent<List<Person>> {
 
     //TODO
     public Stream<Person> toStream() {
-        return null;
+        return this.objectSequence.stream();
     }
 
     //TODO
     public Person[] toArray() {
-        return null;
+        Person[] output = new Person[this.objectSequence.size()];
+        for (int i = 0; i < this.objectSequence.size(); i++) {
+            output[i] = this.objectSequence.get(i);
+        }
+        return output;
     }
 }
